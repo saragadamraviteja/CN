@@ -3,7 +3,7 @@ import random
 import threading
 
 def getGuessedWord(secretWord,lettersGuessed):
-  '''
+  '''.
   secretword : String, word user is guessing!
   lettersguessed : List, letters guessed so far
   returns String, with letters and underscores that represents what
@@ -47,7 +47,7 @@ def getAvailableLetters(lettersGuessed):
     return availableLettersString
 
 def isWordGuessed(secretWord, lettersGuessed):
-    '''
+    '''.
     secretWord: string, the word the user is guessing!
     lettersGuessed: list, what letters have been guessed so far
     returns: boolean, True if all the letters of secretWord are in lettersGuessed;
