@@ -3,15 +3,15 @@ import random
 import threading
 
 def getGuessedWord(secretWord,lettersGuessed):
-    
+
     l,i = [],0
     while i<len(secretWord):
-    for j in secretWord:
-      if j in lettersGuessed:
-        l.insert(i,j)
-      else :
-        l.insert(i,'_')
-      i+=1
+        for j in secretWord:
+            if j in lettersGuessed:
+                l.insert(i,j)
+            else :
+            l.insert(i,'_')
+        i+=1
   return ''.join(l)
 
 
