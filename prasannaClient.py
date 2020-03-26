@@ -18,7 +18,7 @@ def start_guessing():
         elif(st[0]=="Wrong"):
             print("Oops! That letter is not in the word : ",st[1])
         elif(st[0]=="Lose"):
-            print("Sorry, you ran out of guesses. Your word: ",st[1]," Score: ",st[2],".") 
+            print("Sorry, you ran out of guesses. Your word: ",st[1]," Score: ",st[2],".")
             break
 
 def leader_board():
