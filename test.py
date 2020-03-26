@@ -52,7 +52,7 @@ def isWordGuessed(secretWord, lettersGuessed):
     lettersGuessed: list, what letters have been guessed so far
     returns: boolean, True if all the letters of secretWord are in lettersGuessed;
       False otherwise
-    '''
+    ''' .
     result = False
     for c in secretWord:
         if c in lettersGuessed:
@@ -89,7 +89,7 @@ def start_game(secretword,names):
                 conn.send('--------------------.\n'.encode())
                 continue
             lettersGuessed += guess
-            temp = getAvailableLetters(lettersGuessed)
+            # temp = getAvailableLetters(lettersGuessed)
             if guess in secretword:
                 show = getGuessedWord(secretword, lettersGuessed)
                 conn.send(('Good guess: '+ show).encode())
@@ -107,7 +107,7 @@ def start_game(secretword,names):
                     replay(names)
                     return
             else:
-                text = "Oops! That letter is not in my word: "+ getGuessedWord(secretword, lettersGuessed) + ".\n" 
+                text = "Oops! That letter is not in my word: "+ getGuessedWord(secretword, lettersGuessed) + ".\n"
                 conn.send(text.encode())
                 conn.send("-----------------------------.\n".encode())
                 chances -= 1
@@ -121,7 +121,7 @@ def start_game(secretword,names):
             scores[names] = '0'
         # conn.send('check'.encode())
         replay(names)
-        return            
+        return  
 
 
 def letter_invalid(guessed_letter):
@@ -135,7 +135,7 @@ def letter_invalid(guessed_letter):
 def word(i):
     # print('here')
     wordlist = open('words.txt','r').read().split(" ")
-    secretword = wordlist[random.randint(0,len(wordlist))]
+    secretword = wordlist[random.choice(0,len(wordlist))]
     # print(i)
     if i in prevwords:
         if secretword in i:
