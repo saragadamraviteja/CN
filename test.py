@@ -3,14 +3,9 @@ import random
 import threading
 
 def getGuessedWord(secretWord,lettersGuessed):
-  '''.
-  secretword : String, word user is guessing!
-  lettersguessed : List, letters guessed so far
-  returns String, with letters and underscores that represents what
-  letters in secretword have been guessed so far
-  '''
-  l,i = [],0
-  while i<len(secretWord):
+    
+    l,i = [],0
+    while i<len(secretWord):
     for j in secretWord:
       if j in lettersGuessed:
         l.insert(i,j)
@@ -47,12 +42,6 @@ def getAvailableLetters(lettersGuessed):
     return availableLettersString
 
 def isWordGuessed(secretWord, lettersGuessed):
-    '''.
-    secretWord: string, the word the user is guessing!
-    lettersGuessed: list, what letters have been guessed so far
-    returns: boolean, True if all the letters of secretWord are in lettersGuessed;
-      False otherwise
-    '''
     result = False
     for c in secretWord:
         if c in lettersGuessed:
