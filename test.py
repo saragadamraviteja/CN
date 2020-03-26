@@ -135,7 +135,7 @@ def letter_invalid(guessed_letter):
 def word(i):
     # print('here')
     wordlist = open('words.txt','r').read().split(" ")
-    secretword = wordlist[random.choice(0,len(wordlist))]
+    secretword = wordlist[random.choice(wordlist)]
     # print(i)
     if i in prevwords:
         if secretword in i:
