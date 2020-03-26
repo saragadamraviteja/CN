@@ -10,7 +10,7 @@ def getGuessedWord(secretWord,lettersGuessed):
             if j in lettersGuessed:
                 l.insert(i,j)
             else :
-            l.insert(i,'_')
+                l.insert(i,'_')
         i+=1
   return ''.join(l)
 
