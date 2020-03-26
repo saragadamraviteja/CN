@@ -48,7 +48,7 @@ def getAvailableLetters(lettersGuessed):
 
 def isWordGuessed(secretWord, lettersGuessed):
     '''
-    secretWord: string, the word the user is guessing
+    secretWord: string, the word the user is guessing!
     lettersGuessed: list, what letters have been guessed so far
     returns: boolean, True if all the letters of secretWord are in lettersGuessed;
       False otherwise
@@ -121,7 +121,7 @@ def start_game(secretword,names):
             scores[names] = '0'
         # conn.send('check'.encode())
         replay(names)
-        return  
+        return
 
 
 def letter_invalid(guessed_letter):
