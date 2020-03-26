@@ -52,7 +52,7 @@ def isWordGuessed(secretWord, lettersGuessed):
     lettersGuessed: list, what letters have been guessed so far
     returns: boolean, True if all the letters of secretWord are in lettersGuessed;
       False otherwise
-    ''' .
+    '''
     result = False
     for c in secretWord:
         if c in lettersGuessed:
