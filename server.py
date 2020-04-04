@@ -1,7 +1,5 @@
 import random
-# import string
 import socket
-# import os
 import pickle
 import operator
 import threading
