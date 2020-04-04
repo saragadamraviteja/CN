@@ -1,7 +1,7 @@
 import random
-import string
+# import string
 import socket
-import os
+# import os
 import pickle
 import operator
 import threading
@@ -9,6 +9,9 @@ import threading
 class HangmanServer:
 
     def __init__(self, IP, port):
+        """
+        initialising
+        """
         self.scores={}
         self.prevWords = {}
         super().__init__()
@@ -28,7 +31,7 @@ class HangmanServer:
         starts the game and checks the guessed letters with the secret word and updates the user
         """
         with conn:
-            secretWord,user=self.open_game(conn)           
+            secretWord,user=self.open_game(conn)        
             lettersGuessed = []
             totalguesses=8
             conn.send(("Start!! \n I am thinking of a word that is "+str(len(secretWord))+" letters long.").encode())
@@ -45,7 +48,7 @@ class HangmanServer:
                 if (guessinLower in secretWord) and (guessinLower not in lettersGuessed) :
                     lettersGuessed += guessinLower
                     if self.isWordGuessed(secretWord,lettersGuessed):
-                        final = self.calculate_score(totalguesses,user,secretWord) 
+                        final = self.calculate_score(totalguesses,user,secretWord)
                         conn.send(("Won "+secretWord+" "+str(final)).encode())
                         break
                     else:
@@ -108,12 +111,12 @@ class HangmanServer:
             if(secretWord not in self.prevWords[user]):
                 break
         self.prevWords[user].append(secretWord)
-        print(user,secretWord, len(secretWord))  
+        print(user,secretWord, len(secretWord))
         return secretWord,user
 
     def loadWords(self):
         """
-        Returns a list of valid words. Words are strings of lowercase letters.    
+        Returns a list of valid words. Words are strings of lowercase letters.  
         """
         print("Loading word list from file...")
         wordlist = open(r'C:\Users\raviteja\AppData\Local\Programs\Python\Python38\words.txt').read().split(" ")
@@ -125,7 +128,7 @@ class HangmanServer:
         Returns a word from wordlist at random
         """
         return random.choice(wordlist).strip()
-    
+
     def isWordGuessed(self,secretWord, lettersGuessed):
         '''
         returns: boolean, True if all the letters of secretWord are in lettersGuessed;
@@ -168,7 +171,7 @@ class HangmanServer:
         return availableLettersString
 
 def main():
-    # test harness checks for your web server on the localhost and on port 
+    # test harness checks for your web server on the localhost and on port
 
     HangmanServer('192.168.43.228', 8000)
 
