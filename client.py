@@ -1,5 +1,5 @@
 import socket
-import Pickle
+import pickle
 
 def start_guessing():
     while True:

@@ -29,7 +29,7 @@ class HangmanServer:
         starts the game and checks the guessed letters with the secret word and updates the user
         """
         with conn:
-            secretWord,user=self.open_game(conn)        
+            secretWord,user=self.open_game(conn)    
             lettersGuessed = []
             totalguesses=8
             conn.send(("Start!! \n I am thinking of a word that is "+str(len(secretWord))+" letters long.").encode())
@@ -114,16 +114,16 @@ class HangmanServer:
 
     def loadWords(self):
         """
-        Returns a list of valid words. Words are strings of lowercase letters.  
+        Returns a list of valid words. Words are strings of lowercase letters.
         """
         print("Loading word list from file...")
         wordlist = open(r'C:\Users\raviteja\AppData\Local\Programs\Python\Python38\words.txt').read().split(" ")
         print("  ", len(wordlist), "words loaded.")
         return wordlist
-    
+
     def chooseWord(self,wordlist):
         """
-        Returns a word from wordlist at random
+        Returns a word from wordlist at random.
         """
         return random.choice(wordlist).strip()
 
@@ -157,7 +157,7 @@ class HangmanServer:
 
     def getAvailableLetters(self,lettersGuessed):
         '''
-        returns: string, comprised of letters that represents what letters have not
+        returns: string, comprised of letters that represents what letters have not,
         yet been guessed.
         '''
         availableLetters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
