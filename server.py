@@ -29,7 +29,7 @@ class HangmanServer:
         starts the game and checks the guessed letters with the secret word and updates the user
         """
         with conn:
-            secretWord,user=self.open_game(conn)    
+            secretWord,user=self.open_game(conn)
             lettersGuessed = []
             totalguesses=8
             conn.send(("Start!! \n I am thinking of a word that is "+str(len(secretWord))+" letters long.").encode())
@@ -82,7 +82,7 @@ class HangmanServer:
         conn.send(pickle.dumps(sorted_d))
         print("List of prev words for users")
         print(self.prevWords)
-    
+
     def open_game(self,conn):
         """
         starts the game and takes the user details and selects the secret word
@@ -122,7 +122,7 @@ class HangmanServer:
         return wordlist
 
     def chooseWord(self,wordlist):
-        """
+        """ .
         Returns a word from wordlist at random.
         """
         return random.choice(wordlist).strip()
@@ -156,7 +156,7 @@ class HangmanServer:
         return ''.join(l)
 
     def getAvailableLetters(self,lettersGuessed):
-        '''
+        ''' .
         returns: string, comprised of letters that represents what letters have not,
         yet been guessed.
         '''
