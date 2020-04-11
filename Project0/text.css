@@ -1,0 +1,19 @@
+body {
+  background-color: lavender;
+}
+
+h1 {
+  color: midnightblue;
+  text-align: center;
+}
+
+h2 {
+  color: mediumvioletred;
+  text-align: center;
+}
+
+h3, h4 {
+  color: black;
+  font-style: italic;
+}
+/*# sourceMappingURL=text.css.map */
